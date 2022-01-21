@@ -85,7 +85,7 @@ input{
     
     
     <!-- <form action="/v1/signup/valid" class="container"> -->
-    <form action="/v1/signup/valid" class="container">
+    <form  class="container">
 
         <div class="logo">
             <!-- <img src="./images/sumaid-pal-singh-bakshi-cYYw63qx-hw-unsplash.jpg" alt="logo here" > -->
@@ -103,14 +103,22 @@ input{
     </form>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+
+        document.querySelector(".container").addEventListener("submit",(e)=>{
+
+            e.preventDefault();
+        })
+
         document.querySelector('.submit').addEventListener("click",async ()=>{
 
             
 
             const email = document.querySelector(".email").value;
             const name = document.querySelector(".Fname").value;
-            await axios.post("/v1/signup",{email,name});
-
+            const valid = await axios.post("/v1/signup",{email,name});
+            console.log(valid);
+            
+            
         })
     </script>
 </body>
