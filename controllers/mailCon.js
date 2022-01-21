@@ -77,10 +77,10 @@ function redirectValid(req,res){
     res.sendFile(path.join(__dirname,"../public/","valid.html"))
     
 }
-function redirectInvalid(req,res){
+// function redirectInvalid(req,res){
     
-    res.sendFile(path.join(__dirname,"..","invalid.html"))
+//     res.sendFile(path.join(__dirname,"..","invalid.html"))
     
-}
+// }
 
 module.exports = {getSignup,postSignup,redirectValid,redirectInvalid}
