@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MailCollector</title>
+    <!-- <link rel="stylesheet" href="./assets/style.css"> -->
+    <style>
+        
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(204, 127, 204);
+}
+.container{
+    background-color: #252222;
+    max-width: 100%;
+    width: 40%;
+    margin:auto auto;
+    border: 2px solid white;
+    padding-top:50px;
+    margin-top:10%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    overflow: hidden;
+    /* position: absolute; */
+    border-radius: 20px;
+}
+.logo{
+    display: block;
+    text-align: center;
+}
+.logo span{
+    max-width:100%;
+    
+    border:2px solid #faebeb;
+    padding:2px 5px;
+    background-color: rgb(204, 127, 204);
+    font-weight: bolder;
+    font-size: 30px;
+    border-radius: 100%;
+
+    
+}
+input{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding:10px 20px;
+    /* border-radius: 2px; */
+    margin-bottom:5px;
+    background-color: rgb(185, 174, 174);
+}
+.Fname{
+    margin-top: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.email{
+    border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+.submit{
+    width: 25%;
+    border: 2px solid white;
+    background-color: purple;
+    margin: 2% 37%;
+    padding: 5px 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+.submit:focus{
+    outline:none;
+    border-color: burlywood;
+}
+.submit:hover{
+    position: relative;
+    bottom:2px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    
+    
+    <form action="/v1/signup/valid" class="container">
+
+        <div class="logo">
+            <!-- <img src="./images/sumaid-pal-singh-bakshi-cYYw63qx-hw-unsplash.jpg" alt="logo here" > -->
+            <span>J</span>
+        </div>
+        <div class="contents">
+            
+            <input type="text" placeholder="Firstname" class="Fname">
+            <input type="text" placeholder="LastName" class="Lname">
+            <input type="email" placeholder="Email"class="email">
+            <button class="submit">Submit</button>
+
+        </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.querySelector('.submit').addEventListener("click",async ()=>{
+
+            
+
+            const email = document.querySelector(".email").value;
+            const name = document.querySelector(".Fname").value;
+            await axios.post("/v1/signup",{email,name});
+
+        })
+    </script>
+</body>
+</html>
