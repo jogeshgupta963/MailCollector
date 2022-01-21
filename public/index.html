@@ -115,9 +115,15 @@ input{
 
             const email = document.querySelector(".email").value;
             const name = document.querySelector(".Fname").value;
-            const valid = await axios.post("/v1/signup",{email,name});
-            console.log(valid);
             
+            const valid = await axios.post("/v1/signup",{email,name});
+            
+            if(valid.data.validity){
+                window.location.href="/v1/signup/valid";
+            }
+            else{
+                window.location.href="/v1/signup/invalid";
+            }
             
         })
     </script>

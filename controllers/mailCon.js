@@ -15,6 +15,7 @@ function getSignup(req,res){
     // console.log(path.join(__dirname,"../index.html"))
 
     res.sendFile(path.join(__dirname,"../public/","index.html"))
+    // res.sendFile(path.join(__dirname,"../public/","valid.html"))
     
     // res.sendFile('C:\Users\JOGESH\OneDrive\Documents\GitHub\MailCollector\public\index.html');
     
@@ -78,7 +79,7 @@ function redirectValid(req,res){
 }
 function redirectInvalid(req,res){
     
-    res.sendFile(path.join(__dirname,"..","invalid.html"))
+    res.sendFile(path.join(__dirname,"../public/","invalid.html"))
     
 }
 
