@@ -43,7 +43,7 @@ async function postSignup(req,res){
 
        // send mail with defined transport object
         let info =  transporter.sendMail({
-        from: '"Mail 👻" <foo@example.com>', // sender address
+        from: '"MailCollector 👻" <jogeshgupta963@gmail.com' , // sender address <foo@example.com>'
          to:data.email, // list of receivers
          subject: "Hello ✔", // Subject line
          text: `Hello ${data.name} `, // plain text body
